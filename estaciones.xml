@@ -1,0 +1,31 @@
+<estaciones>
+  <estacion nombre="Sur10" latitud="-38.7046237" longitud="-62.230978">
+    <sensores>
+      <sensor nombre="Temperatura" medicion="10" escala="C" />
+      <sensor nombre="Humedad" medicion="100" escala="g/m3" />
+      <sensor nombre="Velocidad Viento" medicion="30" escala="km/h" />
+    </sensores>
+    <bateria>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+      <valor>4274</valor>
+    </bateria>
+  </estacion>
+</estaciones>

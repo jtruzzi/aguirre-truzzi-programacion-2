@@ -7,7 +7,7 @@
       {
         "nombre": "Temperatura",
         "medicion": 10,
-        "escala": "C"
+        "unidad": "C"
       },
       {
         "nombre": "Humedad",
