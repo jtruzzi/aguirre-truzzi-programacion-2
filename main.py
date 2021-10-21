@@ -13,9 +13,25 @@ def ejercicio1():
     print("--------------")
     print("")
 
+def ejercicio2():
+    print("--------------")
+    print("Ingrese un numero menor a 1900:")
+    print("")
+    numero = str(input())
+    if re.match(r"^(([0-9])|(([0][0-9])|([1][0-8]))([0-9]{0,2}))$", numero):
+        print("El numero es valido!")
+    else:
+        print("El numero no es valido!")
+    print("")
+    print("--------------")
+    print("")
+
+# 
+
 def mostrar_menu():
     print("Elija el ejercicio que quiere ejecutar")
     print("1 - Validacion de codigo de aerolineas")
+    print("2 - Validacion de numero menor a 1900")
     print("0 - Salir")
 
 mostrar_menu()
@@ -24,5 +40,7 @@ eleccion = int(input())
 while eleccion != 0:
     if eleccion == 1:
         ejercicio1()
+    if eleccion == 2:
+        ejercicio2()
     mostrar_menu()
     eleccion = int(input())
