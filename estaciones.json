@@ -1,0 +1,28 @@
+[
+  {
+    "nombre": "Sur 10",
+    "latitud": -38.7046237,
+    "longitud": -62.230978,
+    "sensores": [
+      {
+        "nombre": "Temperatura",
+        "medicion": 10,
+        "escala": "C"
+      },
+      {
+        "nombre": "Humedad",
+        "medicion": 100,
+        "unidad": "g/m3"
+      },
+      {
+        "nombre": "Velocidad Viento",
+        "medicion": 30,
+        "unidad": "km/h"
+      }
+    ],
+    "bateria": [
+      4274, 4272, 4274, 4274, 4274, 4274, 4274, 4274, 4274, 4271, 4274, 4274,
+      4274, 4274, 4284, 4274, 4274, 4274, 4274, 4274
+    ]
+  }
+]
