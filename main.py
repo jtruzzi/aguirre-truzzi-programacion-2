@@ -18,15 +18,13 @@ def ejercicio2():
     print("Ingrese un numero menor a 1900:")
     print("")
     numero = str(input())
-    if re.match(r"^(([0-9])|(([0][0-9])|([1][0-8]))([0-9]{0,2}))$", numero):
+    if re.match(r"^(([0-9]{1,3})|([1]([0-8])\d\d))$", numero):
         print("El numero es valido!")
     else:
         print("El numero no es valido!")
     print("")
     print("--------------")
     print("")
-
-# 
 
 def mostrar_menu():
     print("Elija el ejercicio que quiere ejecutar")
