@@ -41,9 +41,11 @@ def ejercicio3():
     for estacion in estaciones:
         print('---------------')
         if estacion['nombre'] == nombre:
-            print(f"Cantidad de sensores de la estación “{estacion['nombre']}”: {len(estacion['sensores'])}")
+            print(
+                f"Cantidad de sensores de la estación “{estacion['nombre']}”: {len(estacion['sensores'])}")
             for sensor in estacion['sensores']:
-                print(f"{sensor['nombre']}: {sensor['medicion']}{sensor['unidad']}")
+                print(
+                    f"{sensor['nombre']}: {sensor['medicion']}{sensor['unidad']}")
             print('')
             return
         print('---------------')
@@ -55,19 +57,39 @@ def ejercicio3():
 def ejercicio4():
     archivo = open('estaciones.json',)
     estaciones = json.load(archivo)
-    ordenadas = sorted(estaciones, key=lambda estacion: sum(estacion['bateria']) / len(estacion['bateria']))
+    ordenadas = sorted(estaciones, key=lambda estacion: sum(
+        estacion['bateria']) / len(estacion['bateria']))
     print('')
     print(f"La estacion con menos bateria es: {ordenadas[0]['nombre']}")
     print('')
     archivo.close()
 
 
+def ejercicio5():
+    def convertir(numero):
+        if len(numero) == 1:
+            return numero
+        else:
+            if (int(numero[0]) % 2 == 0):
+                return "1" + convertir(numero[1:])
+            else:
+                return "2" + convertir(numero[1:])
+
+    print("--------------")
+    numero = str(input("Ingrese el nombre a convertir: "))
+    print("--------------")
+    print("Resultado: ", convertir(numero))
+    print("--------------")
+
+
 def mostrar_menu():
+    print("")
     print("Elija el ejercicio que quiere ejecutar")
-    print("1 - Validacion de codigo de aerolineas")
-    print("2 - Validacion de numero menor a 1900")
-    print("3 - Obtener informacion de estacion")
-    print("4 - Calcular estacion con menos bateria")
+    print("1 - Expresiones regulares, ejercicio 1: Validacion de codigo de aerolineas")
+    print("2 - Expresiones regulares, ejercicio 2: Validacion de numero menor a 1900")
+    print("3 - Formatos de intercambio de datos, ejercicio 1: Obtener informacion de estacion")
+    print("4 - Formatos de intercambio de datos, ejercicio 2: Calcular estacion con menos bateria")
+    print("5 - Recursion, ejercicio 1: Convertir digitos pares/impares")
     print("0 - Salir")
 
 
@@ -83,5 +105,7 @@ while eleccion != 0:
         ejercicio3()
     if eleccion == 4:
         ejercicio4()
+    if eleccion == 5:
+        ejercicio5()
     mostrar_menu()
     eleccion = int(input())
