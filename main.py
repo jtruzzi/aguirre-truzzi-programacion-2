@@ -67,16 +67,18 @@ def intercambio_2():
 
 def recursividad_1():
     def convertir(numero):
-        if len(numero) == 1:
+        if len(numero) == 0:
             return numero
+
+        resto = convertir(numero[1:])
+        par = int(numero[0]) % 2 == 0
+        if (par):
+            return "1" + resto
         else:
-            if (int(numero[0]) % 2 == 0):
-                return "1" + convertir(numero[1:])
-            else:
-                return "2" + convertir(numero[1:])
+            return "2" + resto
 
     print("--------------")
-    numero = str(input("Ingrese el nombre a convertir: "))
+    numero = str(input("Ingrese el numero a convertir: "))
     print("--------------")
     print("Resultado: ", convertir(numero))
     print("--------------")
@@ -84,10 +86,12 @@ def recursividad_1():
 
 def recursividad_2():
     def unificar(listas):
+        primera = listas[0]
+        resto = listas[1:]
         if len(listas) == 1:
-            return listas[0]
+            return primera
         else:
-            return listas[0] + unificar(listas[1:])
+            return primera + unificar(resto)
 
     listas = [[1, 2, 3], [4, 5, 6], [7], [8]]
     print("--------------")
@@ -97,17 +101,35 @@ def recursividad_2():
 
 def recursividad_3():
     def decidir(lista1, lista2):
-        if len(lista1) == 0 and len(lista2) == 0:
+        ambas_listas_vacias = len(lista1) == 0 and len(lista2) == 0
+        if ambas_listas_vacias:
             return True
-        elif lista1[0] == lista2[0]:
+
+        if lista1[0] == lista2[0]:
             return decidir(lista1[1:], lista2[1:])
-        return False
+        else:
+            return False
 
     lista1 = [1, 2, 3, 4, 5, 6, 7, 8]
     lista2 = [7, 6, 3, 4, 5, 2, 8, 1]
     print("--------------")
     print("Resultado: ", decidir(lista1, lista2))
     print("Resultado: ", decidir(lista1, lista1))
+    print("--------------")
+
+
+def recursividad_4():
+    def division_entera(numero1, numero2):
+        resto = numero1 - numero2
+        resto_suficiente = resto < 0
+        if resto_suficiente:
+            return 0
+        else:
+            return 1 + division_entera(resto, numero2)
+
+    print("--------------")
+    print("Resultado: ", division_entera(28, 3))
+    print("Resultado: ", division_entera(6, 2))
     print("--------------")
 
 
@@ -121,6 +143,7 @@ def mostrar_menu():
     print("5 - Recursion, ejercicio 1: Convertir digitos pares/impares")
     print("6 - Recursion, ejercicio 2: Unificar lista de listas")
     print("7 - Recursion, ejercicio 3: Listas son iguales?")
+    print("8 - Recursion, ejercicio 4: Division entera")
     print("0 - Salir")
 
 
@@ -142,5 +165,7 @@ while eleccion != 0:
         recursividad_2()
     if eleccion == 7:
         recursividad_3()
+    if eleccion == 8:
+        recursividad_4()
     mostrar_menu()
     eleccion = int(input())
