@@ -1,0 +1,32 @@
+Funcion reduce(): 
+reduce() es una función incorporada de Python 2, que toma como argumento un conjunto
+ de valores (una lista, una tupla, o cualquier objeto iterable) y lo "reduce" a un 
+ único valor. Cómo se obtiene ese único valor a partir de la colección pasada como
+  argumento dependerá de la función aplicada.
+
+def sumar(a, b):
+    return a + b
+print(reduce(sumar, [1, 2, 3, 4]))  # 10
+
+-----------
+
+Funcion map(): 
+La función incorporada map() ejecuta una función sobre cada uno de los elementos 
+de un iterador (generalmente una lista o tupla) y retorna un nuevo iterador cuyos 
+elementos son el resultado de dicha operación.
+
+def dup(n):
+    return n * 2
+list(map(dup, [1, 2, 3, 4])) # [2, 4, 6, 8]
+
+-----------
+
+Funcion filter(): 
+La función incorporada filter() permite filtrar elementos de una lista o de 
+cualquier objeto iterable. Como primer argumento se le debe indicar una función 
+que tome como argumento un objeto y retorne un valor booleano (True o False); 
+en segundo lugar, el objeto iterable que se desea filtrar.
+
+def es_par(n):
+    return n % 2 == 0
+list(filter(es_par, range(1, 21))) # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
